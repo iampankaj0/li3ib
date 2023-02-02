@@ -14,9 +14,9 @@
         width: 500px;
         margin: 0 15px;
 
-        @media screen and (max-width: 480px) {
-            height: 100%;
-        }
+        // @media screen and (max-width: 480px) {
+        //     height: 100%;
+        // }
 
         >h1 {
             line-height: 1;
@@ -518,12 +518,12 @@
                         flex-direction: column;
                         color: #fff;
 
-                        >svg{
+                        >svg {
                             width: 30px;
                             height: 30px;
                         }
 
-                        >p{
+                        >p {
                             font-weight: 700;
                         }
                     }
@@ -538,6 +538,7 @@
         transform: translateY(0);
     }
 }
+
 
 .background1 {
     background: transparent linear-gradient(180deg, #33de00, #00d83a) 0 0 no-repeat padding-box;

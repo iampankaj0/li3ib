@@ -146,7 +146,7 @@ const SidebarComponent = styled.section`
   }
 `;
 
-const Sidebar = ({ isAuthenticated = true }) => {
+const Sidebar = ({ isAuthenticated = false }) => {
   const [openSidebar, setopenSidebar] = useState(false);
 
   return (

@@ -8,15 +8,22 @@ import Sidebar from "../../reusable/Sidebar";
 import "../../styles/scss/home.scss";
 import CustomSelector from "./CustomSelector";
 import OpenInputSelect from "./OpenInputSelect";
+import { homeBgArray } from "../../utils/homeBgImg";
 // import MetaTitle from "../../reusable/MetaTitle";
+// import { sportArray } from "../../utils/sports";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [searchString, setSearchString] = useState("");
   const [openSelector, setOpenSelector] = useState(false); // For opening the selecter Items Modal
   const [selectionType, setSelectionType] = useState(""); // Send the selection type
   const [selectedSport, setselectedSport] = useState({}); // set selected sport from list
   const [selectedDate, setselectedDate] = useState(""); // set selected date from list
   const [selectedArea, setSelectedArea] = useState(""); // set selected area from list
   const [selectedVenue, setSelectedVenue] = useState({}); // set selected area from list
+
+  const randomIndex = Math.floor(Math.random() * 5);
 
   // INPUT/SELECT ONCLICK FUNCTION
   const handleSelectInput = (type) => {
@@ -31,6 +38,7 @@ const Home = () => {
     setselectedDate("");
     setSelectedArea("");
     setSelectedVenue("");
+    setSearchString("");
   };
 
   // SELECTION OF DATE - ONCLICK FUNCTION
@@ -46,19 +54,38 @@ const Home = () => {
     setSelectedArea(area);
     setOpenSelector(false);
     setSelectedVenue("");
+    setSearchString("");
   };
 
   // SELECTION OF DATE - ONCLICK FUNCTION
   const selectVenueAction = (venue) => {
     setSelectedVenue(venue);
     setOpenSelector(false);
+    setSearchString("");
+  };
+
+  // HANDLE SEARCH BUTTON FUNTION
+  const handleSearch = () => {
+    navigate(
+      `?venues/${selectedSport.id}&&date=${selectedDate}&&area=${selectedArea}&&venue=${selectedVenue?.title}`
+    );
   };
 
   return (
     <>
       {/* <MetaTitle title="Home - Li3ib" /> */}
       <Sidebar />
-      <div className="home__main">
+      <div
+        className="home__main"
+        style={{
+          backgroundImage: `url(${homeBgArray[randomIndex].img})`,
+          backgroundSize: "180px",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right",
+          backgroundPositionX: "102%",
+          backgroundPositionY: "-25px",
+        }}
+      >
         <div>
           <h1>
             Book <br /> your game!
@@ -66,10 +93,10 @@ const Home = () => {
           <div className="selectBoxInput">
             <CustomSelector
               title={`SPORT`}
-              subTitle={selectedSport?.title ?? "SELECT SPORT"}
-              icon={selectedSport?.icon ?? <LogoSVG />}
+              subTitle={selectedSport?.name ?? "SELECT SPORT"}
+              icon={selectedSport?.icon ? <LogoSVG /> : <LogoSVG />}
               onClick={() => handleSelectInput("sport")}
-              className={selectedSport.title ? `option__selected` : ""}
+              className={selectedSport.name ? `option__selected` : ""}
             />
             <CustomSelector
               title={`DATE`}
@@ -86,7 +113,7 @@ const Home = () => {
               icon={<BsPinMapFill />}
               onClick={() => handleSelectInput("area")}
               className={`${
-                selectedSport?.title && selectedDate ? "" : "disabled__input"
+                selectedSport?.name && selectedDate ? "" : "disabled__input"
               }
               ${selectedArea ? `option__selected` : ""}
               `}
@@ -97,13 +124,14 @@ const Home = () => {
               icon={<GoLocation />}
               onClick={() => handleSelectInput("venue")}
               className={`
-                ${selectedSport?.title && selectedDate ? "" : "disabled__input"}
+                ${selectedSport?.name && selectedDate ? "" : "disabled__input"}
                 ${selectedVenue.title ? "option__selected" : ""}
               `}
             />
             <button
               className="search_venue_btn"
-              disabled={selectedSport?.title && selectedDate ? false : true}
+              disabled={selectedSport?.name && selectedDate ? false : true}
+              onClick={handleSearch}
             >
               <FaSearch />
             </button>
@@ -117,6 +145,8 @@ const Home = () => {
             selectAreaAction={selectAreaAction}
             selectVenueAction={selectVenueAction}
             selectedArea={selectedArea}
+            searchString={searchString}
+            setSearchString={setSearchString}
           />
         </div>
       </div>

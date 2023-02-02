@@ -8,6 +8,7 @@ import { BsCheckLg, BsPersonFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { getAreas } from "../../redux/action/areaAction";
 import { getVenues } from "../../redux/action/venuesAction";
+import { getSports } from "../../redux/action/sportsAction";
 
 const OpenInputSelect = ({
   selectionType,
@@ -18,17 +19,11 @@ const OpenInputSelect = ({
   selectAreaAction,
   selectVenueAction,
   selectedArea,
+  searchString,
+  setSearchString,
 }) => {
   const dispatch = useDispatch();
-  const [searchString, setSearchString] = useState("");
   const [startDate, setStartDate] = useState(new Date());
-
-  // Fiter Sports By Name
-  const filterSports = sportArray?.filter((i) => {
-    return i.title
-      .toLocaleLowerCase()
-      .includes(searchString.toLocaleLowerCase());
-  });
 
   // Booking dates are 15 days ahead from today
   const todayDate = new Date();
@@ -36,14 +31,37 @@ const OpenInputSelect = ({
     todayDate.setDate(todayDate.getDate() + 14)
   );
 
-  // GET ALL AREAS
+  // GET ALL SPORTS, AREAS, VENUES
+  const { sports: allSports } = useSelector((state) => state.sports);
   const { area: allAreas } = useSelector((state) => state.area);
   const { venue: allVenues } = useSelector((state) => state.venues);
 
   useEffect(() => {
+    dispatch(getSports());
     dispatch(getAreas());
     dispatch(getVenues(1, ""));
   }, [dispatch]);
+
+  // Fiter Sports By Name
+  const filterSports = allSports?.filter((i) => {
+    return i.name
+      .toLocaleLowerCase()
+      .includes(searchString.toLocaleLowerCase());
+  });
+
+  // Fiter Sports By Name
+  const filterAreas = allAreas?.filter((i) => {
+    return i.title
+      .toLocaleLowerCase()
+      .includes(searchString.toLocaleLowerCase());
+  });
+
+  // Fiter Sports By Name
+  const filterVenues = allVenues?.filter((i) => {
+    return i.title
+      .toLocaleLowerCase()
+      .includes(searchString.toLocaleLowerCase());
+  });
 
   return (
     <div
@@ -86,12 +104,13 @@ const OpenInputSelect = ({
             return (
               <li
                 key={id}
-                className={sport.background}
+                // className={sport?.background}
+                className={sportArray[id]?.background}
                 onClick={() => selectSportAction(sport)}
               >
                 <div>
-                  <i className={`ic ${sport.icon}`}></i>
-                  <p>{sport.title}</p>
+                  <i className={`ic ${sportArray[id]?.icon}`}></i>
+                  <p>{sport.name}</p>
                 </div>
               </li>
             );
@@ -120,7 +139,7 @@ const OpenInputSelect = ({
       ) : selectionType === "area" ? (
         <div className="selectArea__main">
           <ul>
-            {allAreas.map((area) => {
+            {filterAreas.map((area) => {
               return (
                 <li
                   className={area.title === selectedArea ? `selected` : ""}
@@ -136,7 +155,7 @@ const OpenInputSelect = ({
         </div>
       ) : selectionType === "venue" ? (
         <div className="selectVenue__main">
-          {allVenues.map((venue) => {
+          {filterVenues.map((venue) => {
             return (
               <div
                 className="venue__card"
@@ -171,22 +190,6 @@ const OpenInputSelect = ({
       ) : (
         ""
       )}
-      {/* <i className="ic ic-sport-1"></i>
-          <i className="ic ic-sport-2"></i>
-          <i className="ic ic-sport-3"></i>
-          <i className="ic ic-sport-4"></i>
-          <i className="ic ic-sport-5"></i>
-          <i className="ic ic-sport-6"></i>
-          <i className="ic ic-sport-7"></i>
-          <i className="ic ic-sport-8"></i>
-          <i className="ic ic-sport-9"></i>
-          <i className="ic ic-sport-10"></i>
-          <i className="ic ic-sport-11"></i>
-          <i className="ic ic-sport-12"></i>
-          <i className="ic ic-sport-13"></i>
-          <i className="ic ic-sport-14"></i>
-          <i className="ic ic-sport-15"></i>
-          <i className="ic ic-sport-16"></i> */}
     </div>
   );
 };

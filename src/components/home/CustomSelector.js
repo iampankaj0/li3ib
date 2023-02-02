@@ -9,7 +9,10 @@ const CustomSelector = ({ title, subTitle, icon, onClick, className }) => {
           subTitle === "SELECT SPORT" ? (
             <LogoSVG />
           ) : (
-            <i className={`ic ${icon}`} />
+            <>
+              {/* <i className={`ic ${icon}`} /> */}
+              <LogoSVG />
+            </>
           )
         ) : (
           icon
