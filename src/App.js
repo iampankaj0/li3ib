@@ -4,12 +4,15 @@ import "./styles/scss/font.scss";
 import "./styles/scss/icons.scss";
 import "./App.css";
 import Home from "./components/home/Home";
+import Loader from "./reusable/Loader";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/bookings" element={<Loader />} />
+
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>

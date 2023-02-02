@@ -1,11 +1,19 @@
 import React from "react";
-import { ArrowSVG } from "../../reusable/icons";
+import { ArrowSVG, LogoSVG } from "../../reusable/icons";
 
-const CustomSelector = ({ title, subTitle, icon, onClick }) => {
+const CustomSelector = ({ title, subTitle, icon, onClick, className }) => {
   return (
-    <div className={`inputDiv`} onClick={onClick}>
+    <div className={`inputDiv ${className}`} onClick={onClick}>
       <div className="inputIcon">
-        {title === "SPORT" ? <i className={`ic ${icon}`} /> : icon}
+        {title === "SPORT" ? (
+          subTitle === "SELECT SPORT" ? (
+            <LogoSVG />
+          ) : (
+            <i className={`ic ${icon}`} />
+          )
+        ) : (
+          icon
+        )}
       </div>
       <div className="sportName">
         <h3>{title}</h3>

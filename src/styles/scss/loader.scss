@@ -1,0 +1,41 @@
+@import "colors";
+
+.loader__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: $green;
+
+    >div {
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: rotateAnimation 2s linear infinite;
+        border-top: 5px solid #fff;
+        border-right: 5px solid #fff;
+        border-radius: 50%;
+
+
+        >svg {
+            border: 1px solid;
+            fill: #fff;
+            width: 100px;
+            height: 100px;
+            // animation: rotateAnimation 1s linear infinite;
+        }
+    }
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
