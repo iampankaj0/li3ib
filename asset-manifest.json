@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/li3ib/static/css/main.3ba67d17.css",
-    "main.js": "/li3ib/static/js/main.8bc6f6d6.js",
+    "main.css": "/li3ib/static/css/main.f77c8ffe.css",
+    "main.js": "/li3ib/static/js/main.37f42ada.js",
     "static/media/BreuerText.woff": "/li3ib/static/media/BreuerText.6d41bc836658baa328c6.woff",
     "static/media/BreuerText-Bold.woff": "/li3ib/static/media/BreuerText-Bold.e81f29e5eaac10ee6a2d.woff",
     "static/media/squash.svg": "/li3ib/static/media/squash.60bce8a06c500df27648.svg",
@@ -19,11 +19,11 @@
     "static/media/archery-tag.svg": "/li3ib/static/media/archery-tag.ccd7af20b8caf23f85b3.svg",
     "static/media/shooting.svg": "/li3ib/static/media/shooting.ba3e61791bb1ab0607d1.svg",
     "index.html": "/li3ib/index.html",
-    "main.3ba67d17.css.map": "/li3ib/static/css/main.3ba67d17.css.map",
-    "main.8bc6f6d6.js.map": "/li3ib/static/js/main.8bc6f6d6.js.map"
+    "main.f77c8ffe.css.map": "/li3ib/static/css/main.f77c8ffe.css.map",
+    "main.37f42ada.js.map": "/li3ib/static/js/main.37f42ada.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ba67d17.css",
-    "static/js/main.8bc6f6d6.js"
+    "static/css/main.f77c8ffe.css",
+    "static/js/main.37f42ada.js"
   ]
 }
