@@ -1,29 +1,31 @@
 {
   "files": {
-    "main.css": "/li3ib/static/css/main.f77c8ffe.css",
-    "main.js": "/li3ib/static/js/main.37f42ada.js",
+    "main.css": "/li3ib/static/css/main.ae352fd7.css",
+    "main.js": "/li3ib/static/js/main.56860f1f.js",
+    "static/media/basketball.svg": "/li3ib/static/media/basketball.d48b884593166dd5bea6.svg",
+    "static/media/tennis.svg": "/li3ib/static/media/tennis.50566fc31966b1d93ea6.svg",
+    "static/media/football.png": "/li3ib/static/media/football.d62652222915808b6858.png",
+    "static/media/bikes.png": "/li3ib/static/media/bikes.5c8b8cc0bccb57d1bc3e.png",
     "static/media/BreuerText.woff": "/li3ib/static/media/BreuerText.6d41bc836658baa328c6.woff",
     "static/media/BreuerText-Bold.woff": "/li3ib/static/media/BreuerText-Bold.e81f29e5eaac10ee6a2d.woff",
+    "static/media/volleyball.svg": "/li3ib/static/media/volleyball.9eb27b8d0cb1827b2e75.svg",
     "static/media/squash.svg": "/li3ib/static/media/squash.60bce8a06c500df27648.svg",
     "static/media/pedal.svg": "/li3ib/static/media/pedal.a2c07aee395e615d9da0.svg",
     "static/media/handball.svg": "/li3ib/static/media/handball.f3f298113c812182c8f4.svg",
     "static/media/bowling.svg": "/li3ib/static/media/bowling.49758e3995bf7600ca08.svg",
-    "static/media/basketball.svg": "/li3ib/static/media/basketball.d48b884593166dd5bea6.svg",
-    "static/media/volleyball.svg": "/li3ib/static/media/volleyball.9eb27b8d0cb1827b2e75.svg",
     "static/media/football.svg": "/li3ib/static/media/football.1c54c1bfa2f3ca2d05d1.svg",
     "static/media/biking.svg": "/li3ib/static/media/biking.ea8b0d7e61b3a5128b0d.svg",
     "static/media/archery.svg": "/li3ib/static/media/archery.6e6e73c49ee1ac65c3b6.svg",
-    "static/media/tennis.svg": "/li3ib/static/media/tennis.50566fc31966b1d93ea6.svg",
     "static/media/gym.svg": "/li3ib/static/media/gym.2fb51027b188d940aac5.svg",
     "static/media/futsal.svg": "/li3ib/static/media/futsal.3eb544d899a1271cac91.svg",
     "static/media/archery-tag.svg": "/li3ib/static/media/archery-tag.ccd7af20b8caf23f85b3.svg",
     "static/media/shooting.svg": "/li3ib/static/media/shooting.ba3e61791bb1ab0607d1.svg",
     "index.html": "/li3ib/index.html",
-    "main.f77c8ffe.css.map": "/li3ib/static/css/main.f77c8ffe.css.map",
-    "main.37f42ada.js.map": "/li3ib/static/js/main.37f42ada.js.map"
+    "main.ae352fd7.css.map": "/li3ib/static/css/main.ae352fd7.css.map",
+    "main.56860f1f.js.map": "/li3ib/static/js/main.56860f1f.js.map"
   },
   "entrypoints": [
-    "static/css/main.f77c8ffe.css",
-    "static/js/main.37f42ada.js"
+    "static/css/main.ae352fd7.css",
+    "static/js/main.56860f1f.js"
   ]
 }
