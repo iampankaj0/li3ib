@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/li3ib/static/css/main.ae352fd7.css",
-    "main.js": "/li3ib/static/js/main.56860f1f.js",
+    "main.css": "/li3ib/static/css/main.1cc27075.css",
+    "main.js": "/li3ib/static/js/main.c282284a.js",
     "static/media/basketball.svg": "/li3ib/static/media/basketball.d48b884593166dd5bea6.svg",
     "static/media/tennis.svg": "/li3ib/static/media/tennis.50566fc31966b1d93ea6.svg",
     "static/media/football.png": "/li3ib/static/media/football.d62652222915808b6858.png",
@@ -21,11 +21,11 @@
     "static/media/archery-tag.svg": "/li3ib/static/media/archery-tag.ccd7af20b8caf23f85b3.svg",
     "static/media/shooting.svg": "/li3ib/static/media/shooting.ba3e61791bb1ab0607d1.svg",
     "index.html": "/li3ib/index.html",
-    "main.ae352fd7.css.map": "/li3ib/static/css/main.ae352fd7.css.map",
-    "main.56860f1f.js.map": "/li3ib/static/js/main.56860f1f.js.map"
+    "main.1cc27075.css.map": "/li3ib/static/css/main.1cc27075.css.map",
+    "main.c282284a.js.map": "/li3ib/static/js/main.c282284a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae352fd7.css",
-    "static/js/main.56860f1f.js"
+    "static/css/main.1cc27075.css",
+    "static/js/main.c282284a.js"
   ]
 }
