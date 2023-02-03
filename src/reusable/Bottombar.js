@@ -7,6 +7,11 @@ import { IoLocationOutline } from "react-icons/io5";
 
 const BottomContainer = styled.section`
   height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
 
   > .bottombar__child {
     display: flex;

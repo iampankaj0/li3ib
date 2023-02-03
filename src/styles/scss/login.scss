@@ -1,0 +1,84 @@
+@import "colors";
+
+.login__main__div {
+    padding: 15px;
+    background-color: $green;
+    height: calc(100vh - 100px);
+    width: 100vw;
+    box-sizing: border-box;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    overflow-y: auto;
+
+    >.form__section {
+        margin: 0 auto 0;
+        padding-top: 30px;
+        width: 500px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        box-sizing: border-box;
+
+        @media screen and (max-width: 530px) {
+            width: 100%;
+        }
+
+
+        >.forgot__password__link {
+            >a {
+                margin: 10px 0;
+                text-align: center;
+                display: block;
+                color: #fff;
+                text-decoration: underline;
+                font-size: 15px;
+                font-family: li3ib-normal;
+            }
+        }
+
+        >.login__submit__btn {
+            width: 100%;
+            padding: 15px;
+            border-radius: 40px;
+            border: none;
+            outline: none;
+            background: $bgYellow;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-family: li3ib-bold;
+            color: #fff;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        >.signup__redirect {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+
+            >p {
+                font-weight: 700;
+                font-family: li3ib-normal;
+                font-size: 20px;
+                color: #fff;
+            }
+
+            >a {
+                color: $yellow;
+                font-size: 16px;
+                font-family: li3ib-bold;
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+    input:-internal-autofill-selected {
+        appearance: menulist-button;
+        background-image: none !important;
+        background-color: transparent !important;
+        color: fieldtext !important;
+    }
+}

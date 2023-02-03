@@ -10,6 +10,10 @@
     border-radius: 0 0 40px 40px;
     overflow-y: auto;
 
+    @media screen and (max-width: 480px) {
+        background-size: 120px!important;
+    }
+
     >div {
         width: 500px;
         margin: 0 15px;
@@ -146,6 +150,7 @@
         box-sizing: border-box;
         transition: 0.4s;
         transform: translateY(100%);
+        z-index: 1;
 
         @media screen and (max-width: 480px) {
             padding: 15px;
@@ -207,6 +212,8 @@
             flex-wrap: wrap;
             height: calc(100% - 120px);
             overflow-y: auto;
+            z-index: 999;
+            position: absolute;
 
             @media screen and (max-width: 575px) {
                 justify-content: center;

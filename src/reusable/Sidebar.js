@@ -169,7 +169,9 @@ const Sidebar = ({ isAuthenticated = false }) => {
           <div className="logo__head">
             <LogoSVG />
             {!isAuthenticated ? (
-              <p>Li3ib</p>
+              <Link to="/">
+                <p>Li3ib</p>
+              </Link>
             ) : (
               <Link to="/">
                 <p>{`Pankaj Yadav`}</p>
@@ -218,7 +220,11 @@ const Sidebar = ({ isAuthenticated = false }) => {
                 </>
               )}
             </ul>
-            {!isAuthenticated && <button className="login__btn">log in</button>}
+            {!isAuthenticated && (
+              <Link to="/login" className="login__btn">
+                log in
+              </Link>
+            )}
           </div>
         </div>
       </SidebarComponent>
