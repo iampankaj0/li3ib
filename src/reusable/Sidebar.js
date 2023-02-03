@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { GrClose } from "react-icons/gr";
 import { LogoSVG } from "./icons";
@@ -8,6 +8,7 @@ import { CiLogout } from "react-icons/ci";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdOutlinePrivacyTip } from "react-icons/md";
 import { RiMessage2Line, RiFileList2Line } from "react-icons/ri";
+import { langContext } from "../context/localeContext/LocaleContext";
 
 const SidebarWrapper = styled.section`
   position: fixed;
@@ -69,6 +70,11 @@ const SidebarComponent = styled.section`
         border: none;
         outline: none;
         cursor: pointer;
+        &:last-child {
+          color: rgb(52, 213, 52);
+          font-size: 20px;
+          text-shadow: 0px -1px 1px rgb(0 0 0 / 30%);
+        }
         > svg > path {
           stroke: rgb(52, 213, 52);
           fill: rgb(52, 213, 52);
@@ -146,8 +152,10 @@ const SidebarComponent = styled.section`
   }
 `;
 
-const Sidebar = ({ isAuthenticated = false }) => {
+const Sidebar = ({ isAuthenticated = true }) => {
   const [openSidebar, setopenSidebar] = useState(false);
+  const [langSwitch, setlangSwitch] = useState();
+  const [t, changeLang] = useContext(langContext);
 
   return (
     <>
@@ -164,6 +172,7 @@ const Sidebar = ({ isAuthenticated = false }) => {
             <button onClick={() => setopenSidebar(false)}>
               <GrClose />
             </button>
+            <button onClick={changeLang}>{t(`enlish_btn`)}</button>
           </div>
 
           <div className="logo__head">
@@ -185,36 +194,36 @@ const Sidebar = ({ isAuthenticated = false }) => {
                 <>
                   <li>
                     <Link to="/">
-                      <IoPersonOutline /> <span> Profile</span>
+                      <IoPersonOutline /> <span> {t(`profile`)}</span>
                     </Link>
                   </li>
                   <li>
                     <Link to="/">
-                      <IoSettingsOutline /> settings
+                      <IoSettingsOutline /> {t(`settings`)}
                     </Link>
                   </li>
                 </>
               )}
               <li>
                 <Link to="/">
-                  <RiMessage2Line /> Contact Us
+                  <RiMessage2Line /> {t(`contact_us`)}
                 </Link>
               </li>
               <li>
                 <Link to="/">
-                  <MdOutlinePrivacyTip /> Privacy
+                  <MdOutlinePrivacyTip /> {t(`privacy`)}
                 </Link>
               </li>
               {isAuthenticated && (
                 <>
                   <li>
                     <Link to="/">
-                      <RiFileList2Line /> TERMS & CONDITIONS
+                      <RiFileList2Line /> {t(`term_condition`)}
                     </Link>
                   </li>
                   <li>
                     <Link to="/">
-                      <CiLogout /> log out
+                      <CiLogout /> {t(`log_out`)}
                     </Link>
                   </li>
                 </>
@@ -222,7 +231,7 @@ const Sidebar = ({ isAuthenticated = false }) => {
             </ul>
             {!isAuthenticated && (
               <Link to="/login" className="login__btn">
-                log in
+                {t(`log_in`)}
               </Link>
             )}
           </div>
